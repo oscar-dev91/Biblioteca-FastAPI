@@ -1,5 +1,6 @@
 from sqlalchemy.orm import Session, joinedload
-from models.libro import Libro, ElementoBiblioteca
+from models.libro import Libro
+from models.elemento import ElementoBiblioteca
 from schemas import libro as Schema
 
 def crear_libro(db: Session, libro: Schema.LibroCreate):
