@@ -10,12 +10,12 @@ class Libro(Base):
     relacionados con los libros físicos, incluyendo el ISBN, número de páginas, género y editorial.
 
     Atributos:
-        id (int): Identificador único del libro, enlazado a ElementoBiblioteca mediante clave foránea.
-        isbn (str): Código ISBN único del libro.
-        numero_paginas (int): Número total de páginas del libro.
-        genero (str): Género literario del libro (ej. ficción, historia, ciencia).
-        editorial (str): Nombre de la editorial responsable de la publicación del libro.
-        elemento (ElementoBiblioteca): Relación uno a uno con el modelo ElementoBiblioteca.
+    * `id (int)`: Identificador único del libro, enlazado a ElementoBiblioteca mediante clave foránea.
+    * `isbn (str)`: Código ISBN único del libro.
+    * `numero_paginas (int)`: Número total de páginas del libro.
+    * `genero (str)`: Género literario del libro (ej. ficción, historia, ciencia).
+    * `editorial (str)`: Nombre de la editorial responsable de la publicación del libro.
+    * `elemento (ElementoBiblioteca)`: Relación uno a uno con el modelo ElementoBiblioteca.
     """
     __tablename__ = "Libro"
 
