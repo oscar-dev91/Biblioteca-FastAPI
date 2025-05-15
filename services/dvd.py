@@ -105,7 +105,7 @@ def eliminar_dvd(db: Session, dvd_id: int):
     dvd = db.query(DVD).filter(DVD.id == dvd_id).first()
     
     if not dvd:
-        return None
+        return False
     
     elemento = db.query(ElementoBiblioteca).filter(ElementoBiblioteca.id == dvd.id).first()
     if elemento:

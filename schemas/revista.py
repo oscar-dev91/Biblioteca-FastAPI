@@ -57,7 +57,7 @@ class RevistaOut(RevistaBase):
     * elemento (ElementoOut): Información relacionada del modelo ElementoBiblioteca.
     """
     id:int
-    elemento = ElementoOut
+    elemento: ElementoOut
     
     class Config:
         from_attributes = True

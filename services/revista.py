@@ -67,7 +67,7 @@ def actualizar_revista(db: Session, revista_id: int, datos: Schema.RevistaUpdate
         Revista | None: Revista actualizada si existe, de lo contrario None
     """
     revista = db.query(Revista).filter(Revista.id == revista_id).first()
-    if not Revista:
+    if not revista:
         return None
     elemento = db.query(ElementoBiblioteca).filter(ElementoBiblioteca.id == revista_id).first()
     if not elemento:

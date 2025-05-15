@@ -13,7 +13,7 @@ def listar(db: Session = Depends(get_db)):
 Obtiene una lista de todos los DVDs registrados en el sistema.
 
 ## Respuesta
-] ``200 OK``: Lista de DVDs registrados.
+* ``200 OK``: Lista de DVDs registrados.
 
 ## Ejemplo de respuesta
 ```json
@@ -34,10 +34,10 @@ Obtiene una lista de todos los DVDs registrados en el sistema.
 ]
 ```
     """
-    return services.obtener_dvds
+    return services.obtener_dvds(db)
 
 @router.get('/{dvd_id}', response_model=schemas.DVDOut)
-def obtener_libro(libro_id: int, db: Session = Depends(get_db)):
+def obtener_dvd(dvd_id: int, db: Session = Depends(get_db)):
     """# ``GET /dvds/{dvd_id}`` — Obtener DVD por ID
 
 Recupera la información detallada de un DVD específico.
@@ -66,7 +66,7 @@ Recupera la información detallada de un DVD específico.
 }
 ```
 """
-    dvd = services.obtener_dvd(db, libro_id)
+    dvd = services.obtener_dvd(db, dvd_id)
     if not dvd:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail='DVD no encontrado')
     return dvd

@@ -4,7 +4,7 @@ from schemas import revista as schemas
 from services import revista as services
 from deps import get_db
 
-router = APIRouter(prefix='revistas', tags=['Revistas'])
+router = APIRouter(prefix='/revistas', tags=['Revistas'])
 
 @router.get('/', response_model=list[schemas.RevistaOut])
 def listar(db: Session = Depends(get_db)):
